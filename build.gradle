@@ -1,13 +1,13 @@
 buildscript {
-	ext {
-		springBootVersion = '1.5.9.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '1.5.9.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 apply plugin: 'java'
@@ -18,22 +18,22 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-aop')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:+')
+    compile('org.springframework.boot:spring-boot-starter-aop')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:+')
 
-	compile('com.google.guava:guava:23.6-jre')
+    compile('com.google.guava:guava:23.6-jre')
+    compile('org.projectlombok:lombok:1.16.18')
+    compile('com.alibaba:fastjson:1.2.44')
 
-	compile('org.projectlombok:lombok:1.16.18')
-
-	runtime('org.springframework.boot:spring-boot-devtools')
-	compile('org.springframework.boot:spring-boot-starter-actuator')
-	compile('io.dropwizard.metrics:metrics-core:3.1.5')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
+    runtime('org.springframework.boot:spring-boot-devtools')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('io.dropwizard.metrics:metrics-core:3.1.5')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
 }

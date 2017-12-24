@@ -16,6 +16,9 @@ public class Car2 {
     @JsonIgnore
     private Double weight;
 
+    /**
+     * fastjson: https://github.com/alibaba/fastjson/wiki/JSONField_unwrapped_cn
+     */
     @JsonUnwrapped
     private Wheel wheel;
 

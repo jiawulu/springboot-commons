@@ -11,6 +11,7 @@ import org.apache.commons.beanutils.BeanUtilsBean2;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.cglib.beans.BeanCopier;
+import org.springframework.util.StringUtils;
 
 /**
  * @author wuzhong on 2017/12/25.
@@ -112,6 +113,7 @@ public class ObjectCopier {
             } catch (Throwable e) {
 
             }
+
 
         }
 

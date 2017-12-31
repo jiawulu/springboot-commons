@@ -1,4 +1,4 @@
-package me.jiawu.commons.result;
+package me.jiawu.utils.result;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package me.jiawu.commons.result;
+package me.jiawu.utils.result;
 
 /**
  * @author wuzhong on 2017/12/25.

@@ -6,8 +6,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 import lombok.extern.slf4j.Slf4j;
-import me.jiawu.commons.result.AppError;
-import me.jiawu.commons.result.Result;
+import me.jiawu.utils.result.AppError;
+import me.jiawu.utils.result.Result;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;

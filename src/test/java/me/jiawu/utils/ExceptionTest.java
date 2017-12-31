@@ -1,8 +1,8 @@
 package me.jiawu.utils;
 
-import me.jiawu.commons.result.Result;
 import me.jiawu.utils.ExCatcher.Catchable;
 import me.jiawu.utils.ExCatcher.ResultConvertor;
+import me.jiawu.utils.result.Result;
 import me.jiawu.utils.ExceptionTest.Config;
 import org.junit.Test;
 import org.junit.runner.RunWith;

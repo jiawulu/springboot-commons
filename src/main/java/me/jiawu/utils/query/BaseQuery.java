@@ -1,4 +1,4 @@
-package me.jiawu.commons.query;
+package me.jiawu.utils.query;
 
 import java.io.Serializable;
 

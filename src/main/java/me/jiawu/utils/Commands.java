@@ -163,7 +163,7 @@ public class Commands {
     @Slf4j
     private static class ProcessExecutor {
 
-        private static String SCRIPT_TEMPLATE = "set -e\n%s\n echo _success_ > .commands_result";
+        private static String SCRIPT_TEMPLATE = "#!/bin/bash\nset -e\n%s\n echo _success_ > .commands_result";
         private static String CMD_TEMPLATE = "%s >> %s 2>&1";
 
         private ProcessBuilder processBuilder;
@@ -194,21 +194,26 @@ public class Commands {
 
         private ProcessBuilder getProcessBuilder(ProcessParams params) {
             if (params.isSaveCmdToScript()) {
-                File tmplateFile = new File(params.workspace, ".commands_script.sh");
+                File shellFile = new File(params.workspace, ".commands_script.sh");
                 File successFile = new File(params.workspace, ".commands_result");
-                tmplateFile.delete();
+                shellFile.delete();
                 successFile.delete();
                 String template = String.format(SCRIPT_TEMPLATE, params.getCmd());
                 try {
-                    Files.asCharSink(tmplateFile, Charset.forName("UTF-8")).write(template);
+                    Files.asCharSink(shellFile, Charset.forName("UTF-8")).write(template);
                     //Files.touch(successFile);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                tmplateFile.setExecutable(true);
-                String cmd = String.format(CMD_TEMPLATE, tmplateFile.getAbsolutePath(),
+                shellFile.setExecutable(true);
+                String cmd = String.format(CMD_TEMPLATE, shellFile.getAbsolutePath(),
                                            params.getLogFile().getAbsolutePath());
+
                 return new ProcessBuilder("/bin/bash", "-c", cmd);
+                //日志输出不了
+                //return new ProcessBuilder(shellFile.getAbsolutePath(),">>",
+                //                          params.getLogFile().getAbsolutePath(),"2>&1");
+
             }
             return new ProcessBuilder("/bin/bash", "-c", params.getCmd());
         }

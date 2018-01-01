@@ -37,7 +37,7 @@ public class CommandsTest {
     public void execute2() {
 
         ProcessParams params =
-            ProcessParams.builder().cmd("ls")
+            ProcessParams.builder().cmd("./gradlew clean")
                 .workspace(new File("/Users/wuzhong/workspace/taobao_android/MainBuilder"))
                 .saveCmdToScript(true).logFile(new File("/tmp/script_log"))
                 .logMessage(true).saveMessage(true).build();

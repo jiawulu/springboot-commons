@@ -3,6 +3,16 @@ me:
   name: "lujiawu"
 
 management:
-  port: 8081
+  port: 8581
   security:
       enabled: false
+
+swagger:
+  enabled: true
+  title: "spring boot demo APIS"
+  description: "demo api desc"
+  version: "v1"
+  base-package: "me.wuzhong"
+
+server:
+  port: 8080
